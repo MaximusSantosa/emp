@@ -77,7 +77,7 @@
         </style>
     </head>
     <body>
-        <button class="btn btn-primary">Ttest</button>
+        <button class="btn btn-primary">New Buttont</button>
         <div class="content">
         <table>
                 <tr><td>Name</td></tr>
