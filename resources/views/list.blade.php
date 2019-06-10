@@ -82,7 +82,7 @@
         <table>
                 <tr><td>Name</td></tr>
                 @foreach($data as $row)
-                    <tr><td>{{ $row->name }}</td></tr>
+                    <tr><td>{{ $row->nama }}</td></tr>
                 @endforeach 
         </table>
         </div>
