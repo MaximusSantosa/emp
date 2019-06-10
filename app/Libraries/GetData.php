@@ -12,7 +12,7 @@ class GetData extends Controller{
             }
                 public function emplist(){
                     //$data=array('o','n','e');
-                    $data=DB::select("select nama from emp");
+                    $data=DB::select("select * from emp");
                     return $data;
             } 
            
