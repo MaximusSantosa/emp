@@ -15,7 +15,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('list', 'MainController@index');
 
-
+Route::get('profile/{id}/', ['as' => 'profile', 'uses' => 'MainController@profile']);
 

@@ -94,76 +94,41 @@
                     </li>
                 </ul>
             </div>
-        </nav>        
+        </nav>
         <br>
         <div class="content">
-        
-        <table id="table" class="display nowrap">
+        <?php
+            $TGL_LAHIR=date_create((string)($data[0]->TGL_LAHIR));
+            $TGL_MASUK=date_create((string)($data[0]->TGL_MASUK));
+            $TODAY=date_create((string)($data[0]->TODAY));
+            $USIA=date_diff($TGL_LAHIR, $TODAY);
+            $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
+        ?>
+        <table align="center">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>NO</td>
-                    <td>NIK</td>
-                    <td>NAMA</td>
-                    <td>GENDER</td>
-                    <td>TGL LAHIR</td>
-                    <td>TGL MASUK</td>
-                    <td>CATEGORY</td>
-                    <td>JAB</td>
-                    <td>PERUSAHAAN</td>
-                    <td>DEPT</td>
-                    <td>SHIFT</td>
-                    <td>TGL KELUAR</td>
-                    <td>MANAGER NIK</td>
-                    <td>STATUS KARYAWAN</td>
-                    <td>USIA</td>
-                    <td>LAMA KERJA</td>
+                    <td colspan="2"><h2>EMPLOYEE INFO</h2></td>
                 </tr>
             </thead>
             <tbody>
-            @foreach($data as $row)
-                <?php
-                    $TGL_LAHIR=date_create((string)($row->TGL_LAHIR));
-                    $TGL_MASUK=date_create((string)($row->TGL_MASUK));
-                    $TODAY=date_create((string)($row->TODAY));
-                    $USIA=date_diff($TGL_LAHIR, $TODAY);
-                    $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
-                ?>
-                <tr>
-                    <td>{{ strtoupper($row->ID) }}</td>
-                    <td>{{ strtoupper($row->NO) }}</td>
-                    <td>{{ strtoupper($row->NIK) }}</td>
-                    <td>
-                        {{ strtoupper($row->NAMA) }}
-                        {{ Form::open (['route' => ['profile', 'id'=>$row->ID], 'method' => 'GET']) }}
-                            {{ Form::submit('View Profile', ['class' => 'btn btn-primary']) }}
-                        {{ Form::close() }}
-
-                        
-                    </td>
-                    <td>{{ strtoupper($row->GENDER) }}</td>
-                    <td>{{ strtoupper($row->TGL_LAHIR) }}</td>
-                    <td>{{ strtoupper($row->TGL_MASUK) }}</td>
-                    <td>{{ strtoupper($row->CATEGORY) }}</td>
-                    <td>{{ strtoupper($row->JAB) }}</td>
-                    <td>{{ strtoupper($row->PERUSAHAAN) }}</td>
-                    <td>{{ strtoupper($row->DEPT) }}</td>
-                    <td>{{ strtoupper($row->SHIFT) }}</td>
-                    <td>{{ strtoupper($row->TGL_KELUAR) }}</td>
-                    <td>{{ strtoupper($row->MANAGER_NIK) }}</td>
-                    <td>{{ strtoupper($row->STATUS_KARYAWAN) }}</td>
-                    <td>{{ $USIA->format("%y") }}</td>
-                    <td>{{ $LAMA_KERJA->format("%y") }}</td>
-                </tr>
-            @endforeach 
-            </tbody>
+                <tr><td>ID</td><td>{{ strtoupper($data[0]->ID) }}</td></tr>
+                <tr><td>NO</td><td>{{ strtoupper($data[0]->NO) }}</td></tr>
+                <tr><td>NIK</td><td>{{ strtoupper($data[0]->NIK) }}</td></tr>
+                <tr><td>NAMA</td><td>{{ strtoupper($data[0]->NAMA) }}</td></tr>
+                <tr><td>GENDER</td><td>{{ strtoupper($data[0]->GENDER) }}</td></tr>
+                <tr><td>TGL LAHIR</td><td>{{ strtoupper($data[0]->TGL_LAHIR) }}</td></tr>
+                <tr><td>TGL MASUK</td><td>{{ strtoupper($data[0]->TGL_MASUK) }}</td></tr>
+                <tr><td>CATEGORY</td><td>{{ strtoupper($data[0]->CATEGORY) }}</td></tr>
+                <tr><td>JAB</td><td>{{ strtoupper($data[0]->JAB) }}</td></tr>
+                <tr><td>PERUSAHAAN</td><td>{{ strtoupper($data[0]->PERUSAHAAN) }}</td></tr>
+                <tr><td>DEPT</td><td>{{ strtoupper($data[0]->DEPT) }}</td></tr>
+                <tr><td>SHIFT</td><td>{{ strtoupper($data[0]->SHIFT) }}</td></tr>
+                <tr><td>TGL_KELUAR</td><td>{{ strtoupper($data[0]->TGL_KELUAR) }}</td></tr>
+                <tr><td>MANAGER_NIK</td><td>{{ strtoupper($data[0]->MANAGER_NIK) }}</td></tr>
+                <tr><td>STATUS_KARYAWAN</td><td>{{ strtoupper($data[0]->STATUS_KARYAWAN) }}</td></tr>
+                <tr><td>USIA</td><td>{{ $USIA->format("%y") }}</td></tr>
+                <tr><td>LAMA KERJA</td><td>{{ $LAMA_KERJA->format("%y") }}</td></tr>
         </table>
-        </div>
-        <script>
-            $(document).ready( function () {
-                $('#table').DataTable({
-                });
-            } );
-        </script>
+        
     </body>
 </html>

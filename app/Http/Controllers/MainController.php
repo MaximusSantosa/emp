@@ -15,4 +15,11 @@ class MainController extends Controller
         $data=$d->emplist();
         return view('list', ['data' => $data]);
     }
+
+    public function profile($id)
+    {
+        $d=New GetData();
+        $data=$d->profile($id);
+        return view('profile', ['data' => $data]);
+    }
 }

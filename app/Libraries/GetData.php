@@ -15,6 +15,11 @@ class GetData extends Controller{
                     $data=DB::select("select * from emp");
                     return $data;
             } 
+
+            public function profile($id){
+                $data=DB::select("select * from emp where ID = $id");
+                return $data;
+            }
            
             
 
