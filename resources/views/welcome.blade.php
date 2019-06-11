@@ -8,6 +8,24 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        
+        <!-- JQuery Tables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
         <!-- Styles -->
         <style>
@@ -64,6 +82,19 @@
         </style>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #99c2ff">
+            <div class="container-fluid">
+                <ul class="navbar-nav navbar-left">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/" style="color:#cc5200">EMP</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/list" style="color:#0052cc">EMPLOYEE LIST</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+        <br>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -81,17 +112,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    HR SYSTEM
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/list">EMPLOYEE LIST</a>
                 </div>
             </div>
         </div>
