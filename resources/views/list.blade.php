@@ -11,23 +11,12 @@
         <table id="table" class="display nowrap">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>NO</td>
                     <td>NIK</td>
                     <td>NAMA</td>
-                    <td>GENDER</td>
-                    <td>TGL LAHIR</td>
-                    <td>TGL MASUK</td>
-                    <td>CATEGORY</td>
                     <td>JAB</td>
-                    <td>PERUSAHAAN</td>
                     <td>DEPT</td>
                     <td>SHIFT</td>
-                    <td>TGL KELUAR</td>
-                    <td>MANAGER NIK</td>
-                    <td>STATUS KARYAWAN</td>
-                    <td>USIA</td>
-                    <td>LAMA KERJA</td>
+                    <td>STATUS</td>
                 </tr>
             </thead>
             <tbody>
@@ -40,30 +29,17 @@
                     $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
                 ?>
                 <tr>
-                    <td>{{ strtoupper($row->ID) }}</td>
-                    <td>{{ strtoupper($row->NO) }}</td>
                     <td>{{ strtoupper($row->NIK) }}</td>
                     <td>
                         {{ strtoupper($row->NAMA) }}
                         {{ Form::open (['route' => ['profile', 'id'=>$row->ID], 'method' => 'GET']) }}
                             {{ Form::submit('View Profile', ['class' => 'btn btn-primary']) }}
                         {{ Form::close() }}
-
-                        
                     </td>
-                    <td>{{ strtoupper($row->GENDER) }}</td>
-                    <td>{{ strtoupper($row->TGL_LAHIR) }}</td>
-                    <td>{{ strtoupper($row->TGL_MASUK) }}</td>
-                    <td>{{ strtoupper($row->CATEGORY) }}</td>
                     <td>{{ strtoupper($row->JAB) }}</td>
-                    <td>{{ strtoupper($row->PERUSAHAAN) }}</td>
                     <td>{{ strtoupper($row->DEPT) }}</td>
                     <td>{{ strtoupper($row->SHIFT) }}</td>
-                    <td>{{ strtoupper($row->TGL_KELUAR) }}</td>
-                    <td>{{ strtoupper($row->MANAGER_NIK) }}</td>
                     <td>{{ strtoupper($row->STATUS_KARYAWAN) }}</td>
-                    <td>{{ $USIA->format("%y") }}</td>
-                    <td>{{ $LAMA_KERJA->format("%y") }}</td>
                 </tr>
             @endforeach 
             </tbody>
