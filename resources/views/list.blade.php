@@ -31,9 +31,8 @@
                 <tr>
                     <td>{{ strtoupper($row->NIK) }}</td>
                     <td>
-                        {{ strtoupper($row->NAMA) }}
                         {{ Form::open (['route' => ['profile', 'id'=>$row->ID], 'method' => 'GET']) }}
-                            {{ Form::submit('View Profile', ['class' => 'btn btn-primary']) }}
+                            {{ Form::submit(strtoupper($row->NAMA), ['class' => 'link']) }}
                         {{ Form::close() }}
                     </td>
                     <td>{{ strtoupper($row->JAB) }}</td>

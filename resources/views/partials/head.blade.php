@@ -80,4 +80,15 @@
     .m-b-md {
         margin-bottom: 30px;
     }
+
+    .link {
+        background:none;
+        color:inherit;
+        border:none; 
+        padding:0!important;
+        font: inherit;
+        /*border is optional*/
+        border-bottom:1px solid #444; 
+        cursor: pointer;
+    }
 </style>
