@@ -22,11 +22,19 @@ class GetData extends Controller{
             }
 
             public function home(){
-                $bptData=DB::select("select * from emp where PERUSAHAAN = 'BPT'");
-                $sklData=DB::select("select * from emp where PERUSAHAAN = 'SKL'");
-                $totalBpt=sizeof($bptData);
-                $totalSkl=sizeof($sklData);
-                $data=array($totalBpt, $totalSkl);
+                $bptTotalData=DB::select("select * from emp where PERUSAHAAN = 'BPT'");
+                $bptLData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'L'");
+                $bptPData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'P'");
+                $sklTotalData=DB::select("select * from emp where PERUSAHAAN = 'SKL'");
+                $sklLData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'L'");
+                $sklPData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'P'");
+                $bptTotal=sizeof($bptTotalData);
+                $sklTotal=sizeof($sklTotalData);
+                $bptL=sizeof($bptLData);
+                $bptP=sizeof($bptPData);
+                $sklL=sizeof($sklLData);
+                $sklP=sizeof($sklPData);
+                $data=array($bptTotal, $sklTotal, $bptL, $bptP, $sklL, $sklP);
                 return $data;
             }
            
