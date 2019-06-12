@@ -29,8 +29,20 @@
                 <div class="links">
                     <a href="/list">EMPLOYEE LIST</a>
                 </div>
-                Total BPT Employees: {{ $data[0] }}
-                Total SKL Employees: {{ $data[1] }}
+                <br><br><br>
+                <table align="center">
+                    <thead>
+                        <tr>
+                            <td>BAPINTRI</td>
+                            <td>SOKOLANCAR</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total BPT Employees: {{ $data[0] }}</td>
+                            <td>Total SKL Employees: {{ $data[1] }}</td>
+                        </tr>
+                </table>
             </div>
         </div>
     </body>
