@@ -118,6 +118,8 @@
                 <div class="links">
                     <a href="/list">EMPLOYEE LIST</a>
                 </div>
+                Total BPT Employees: {{ $data[0] }}
+                Total SKL Employees: {{ $data[1] }}
             </div>
         </div>
     </body>

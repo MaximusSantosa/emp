@@ -9,7 +9,7 @@ use App\Libraries\GetData;
 class MainController extends Controller
 {
     //
-    public function index()
+    public function list()
     {
         $d=New GetData();
         $data=$d->emplist();
@@ -21,5 +21,12 @@ class MainController extends Controller
         $d=New GetData();
         $data=$d->profile($id);
         return view('profile', ['data' => $data]);
+    }
+
+    public function home()
+    {
+        $d=New GetData();
+        $data=$d->home();
+        return view('home', ['data' => $data]);
     }
 }

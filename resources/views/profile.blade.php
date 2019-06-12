@@ -87,7 +87,7 @@
             <div class="container-fluid">
                 <ul class="navbar-nav navbar-left">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color:#cc5200">EMP</a>
+                        <a class="nav-link" href="/" style="color:#cc5200">EMP</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/list" style="color:#0052cc">EMPLOYEE LIST</a>

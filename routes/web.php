@@ -12,11 +12,9 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@home');
 
-Route::get('list', 'MainController@index');
+Route::get('list', 'MainController@list');
 
 Route::get('profile/{id}/', ['as' => 'profile', 'uses' => 'MainController@profile']);
 

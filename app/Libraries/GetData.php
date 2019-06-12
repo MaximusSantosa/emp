@@ -20,6 +20,15 @@ class GetData extends Controller{
                 $data=DB::select("select * from emp where ID = $id");
                 return $data;
             }
+
+            public function home(){
+                $bptData=DB::select("select * from emp where PERUSAHAAN = 'BPT'");
+                $sklData=DB::select("select * from emp where PERUSAHAAN = 'SKL'");
+                $totalBpt=sizeof($bptData);
+                $totalSkl=sizeof($sklData);
+                $data=array($totalBpt, $totalSkl);
+                return $data;
+            }
            
             
 
