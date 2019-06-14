@@ -22,12 +22,12 @@ class GetData extends Controller{
             }
 
             public function home(){
-                $bptTotalData=DB::select("select * from emp where PERUSAHAAN = 'BPT'");
-                $bptLData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'L'");
-                $bptPData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'P'");
-                $sklTotalData=DB::select("select * from emp where PERUSAHAAN = 'SKL'");
-                $sklLData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'L'");
-                $sklPData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'P'");
+                $bptTotalData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and TGL_KELUAR is NULL");
+                $bptLData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'L' and TGL_KELUAR is NULL");
+                $bptPData=DB::select("select * from emp where PERUSAHAAN = 'BPT' and GENDER = 'P' and TGL_KELUAR is NULL");
+                $sklTotalData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and TGL_KELUAR is NULL");
+                $sklLData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'L' and TGL_KELUAR is NULL");
+                $sklPData=DB::select("select * from emp where PERUSAHAAN = 'SKL' and GENDER = 'P' and TGL_KELUAR is NULL");
                 $bptTotal=sizeof($bptTotalData);
                 $sklTotal=sizeof($sklTotalData);
                 $bptL=sizeof($bptLData);
