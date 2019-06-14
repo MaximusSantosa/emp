@@ -14,7 +14,6 @@
             $USIA=date_diff($TGL_LAHIR, $TODAY);
             $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
             $picStart="/profilepics/";
-            $picEnd=".jpg";
         ?>
         
         <div class="container">
@@ -28,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td colspan="2"><img src="{{$picStart.$data[0]->NIK.$picEnd}}" style="width:50%;"></td></tr>
+                            <tr><td colspan="2"><img src="{{$picStart.$data[0]->NIK}}" style="width:50%;"></td></tr>
                             <tr><td>ID</td><td>{{ strtoupper($data[0]->ID) }}</td></tr>
                             <tr><td>NO</td><td>{{ strtoupper($data[0]->NO) }}</td></tr>
                             <tr><td>NIK</td><td>{{ strtoupper($data[0]->NIK) }}</td></tr>
