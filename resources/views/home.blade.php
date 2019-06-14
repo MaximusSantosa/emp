@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- CanvasJS -->
+        <script type="text/javascript" src="canvasjs.min.js"></script>
+        
         @include('partials.head')
         <?php
             $bptDataPoints = array( 
