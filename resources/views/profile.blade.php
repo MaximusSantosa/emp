@@ -31,9 +31,12 @@
                         <tbody>
                             <tr><td colspan="2">
                                 <?php if (file_exists(public_path().$picStart.$data[0]->NIK.$jpg)) {
+                                    echo(public_path().$picStart.$data[0]->NIK.$jpg)
                                 ?>
                                     <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
-                                <?php } else { ?>
+                                <?php } else { 
+                                    echo(public_path().$picStart.$data[0]->NIK.$jpg)
+                                ?>
                                     <img src="{{ $picStart.$picMale }}" style="width:250px;">
                                 <?php } ?>
                             </td></tr>
