@@ -30,15 +30,7 @@
                         </thead>
                         <tbody>
                             <tr><td colspan="2">
-                                <?php if (file_exists(public_path().$picStart.$data[0]->NIK.$jpg)) {
-                                    echo($_SERVER['HTTP_HOST'].$picStart.$data[0]->NIK)
-                                ?>
-                                    <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
-                                <?php } else { 
-                                    echo($_SERVER['HTTP_HOST'].$picStart.$data[0]->NIK)
-                                ?>
-                                    <img src="{{ $picStart.$picMale }}" style="width:250px;">
-                                <?php } ?>
+                                <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
                             </td></tr>
                             <tr><td>ID</td><td>{{ strtoupper($data[0]->ID) }}</td></tr>
                             <tr><td>NO</td><td>{{ strtoupper($data[0]->NO) }}</td></tr>
