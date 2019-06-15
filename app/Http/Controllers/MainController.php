@@ -20,6 +20,12 @@ class MainController extends Controller
     {
         $d=New GetData();
         $data=$d->profile($id);
+        $data = json_decode(json_encode($data[0], true));
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/profilepics/'.$data->NIK.'.jpg')){
+            $data->img = '/profilepics/'.$data->NIK.'.jpg';
+        } else {
+            $data->img = '/profilepics/defaultPic.png';
+        }
         return view('profile', ['data' => $data]);
     }
 

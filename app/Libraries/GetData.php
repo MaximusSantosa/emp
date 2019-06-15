@@ -17,6 +17,7 @@ class GetData extends Controller{
             } 
 
             public function profile($id){
+                $data=array();
                 $data=DB::select("select * from emp where ID = $id");
                 return $data;
             }
