@@ -14,6 +14,8 @@
             $USIA=date_diff($TGL_LAHIR, $TODAY);
             $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
             $picStart="/profilepics/";
+            $picMale="MaleNoPic";
+            $jpg=".jpg";
         ?>
         
         <div class="container">
@@ -27,7 +29,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td colspan="2"><img src="{{$picStart.$data[0]->NIK}}" style="width:50%;"></td></tr>
+                            <tr><td colspan="2">
+                                <?php if (file_exists(public_path().$picStart.$data[0]->NIK.$jpg)) {
+                                ?>
+                                    <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
+                                <?php } else { ?>
+                                    <img src="{{ $picStart.$picMale }}" style="width:250px;">
+                                <?php } ?>
+                            </td></tr>
                             <tr><td>ID</td><td>{{ strtoupper($data[0]->ID) }}</td></tr>
                             <tr><td>NO</td><td>{{ strtoupper($data[0]->NO) }}</td></tr>
                             <tr><td>NIK</td><td>{{ strtoupper($data[0]->NIK) }}</td></tr>
