@@ -31,11 +31,11 @@
                         <tbody>
                             <tr><td colspan="2">
                                 <?php if (file_exists(public_path().$picStart.$data[0]->NIK.$jpg)) {
-                                    echo(public_path().$picStart.$data[0]->NIK.$jpg)
+                                    echo($_SERVER['HTTP_HOST'].$picStart.$data[0]->NIK)
                                 ?>
                                     <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
                                 <?php } else { 
-                                    echo(public_path().$picStart.$data[0]->NIK.$jpg)
+                                    echo($_SERVER['HTTP_HOST'].$picStart.$data[0]->NIK)
                                 ?>
                                     <img src="{{ $picStart.$picMale }}" style="width:250px;">
                                 <?php } ?>
