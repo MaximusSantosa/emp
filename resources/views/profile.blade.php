@@ -30,7 +30,7 @@
                         </thead>
                         <tbody>
                             <tr><td colspan="2">
-                                <?php if (file_exists(public_path().$picStart.$data[0]->NIK)) {
+                                <?php if (file_exists(public_path().$picStart.$data[0]->NIK.$jpg)) {
                                 ?>
                                     <img src="{{ $picStart.$data[0]->NIK }}" style="width:250px;">
                                 <?php } else { ?>
