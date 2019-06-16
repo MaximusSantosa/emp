@@ -29,6 +29,13 @@
 <!-- Feathericons -->
 <script src="https://unpkg.com/feather-icons"></script>
 
+<!-- Load c3.css -->
+<link href="{{ URL::asset('lib/c3-0.7.1/c3.css') }}" rel="stylesheet">
+
+<!-- Load d3.js and c3.js -->
+<script src="{{ URL::asset('lib/d3.min.js') }}" charset="utf-8"></script>
+<script src="{{ URL::asset('lib/c3-0.7.1/c3.min.js') }}"></script>
+
 <!-- Styles -->
 <style>
     html, body {

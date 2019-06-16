@@ -1,56 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <!-- CanvasJS -->
-        <script type="text/javascript" src="canvasjs.min.js"></script>
         
         @include('partials.head')
-        <?php
-            $bptDataPoints = array( 
-                array("label"=>"LELAKI", "y"=>($data[2]/$data[0] * 100)),
-                array("label"=>"PEREMPUAN", "y"=>($data[3]/$data[0] * 100))
-            )
-        ?>
-        <?php
-            $sklDataPoints = array( 
-                array("label"=>"LELAKI", "y"=>($data[4]/$data[1] * 100)),
-                array("label"=>"PEREMPUAN", "y"=>($data[5]/$data[1] * 100))
-            )
-        ?>
-        <script>
-            window.onload = function() {
-            
-            
-            var bptChart = new CanvasJS.Chart("bptChart", {
-                animationEnabled: true,
-                title: {
-                    text: "BPT Gender Distribution"
-                },
-                data: [{
-                    type: "pie",
-                    yValueFormatString: "#,##0.00\"%\"",
-                    indexLabel: "{label} ({y})",
-                    dataPoints: <?php echo json_encode($bptDataPoints, JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            bptChart.render();
-            
-            var sklChart = new CanvasJS.Chart("sklChart", {
-                animationEnabled: true,
-                title: {
-                    text: "SKL Gender Distribution"
-                },
-                data: [{
-                    type: "pie",
-                    yValueFormatString: "#,##0.00\"%\"",
-                    indexLabel: "{label} ({y})",
-                    dataPoints: <?php echo json_encode($sklDataPoints, JSON_NUMERIC_CHECK); ?>
-                }]
-            });
-            sklChart.render();
-
-            }
-        </script>
+        
+        
     </head>
     <body>
         @include('partials.navbar')
@@ -69,7 +23,6 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     HR SYSTEM
@@ -92,12 +45,40 @@
                             <td>Total SKL Employees: {{ $data[1] }}</td>
                         </tr>
                         <tr>
-                            <td><div id="bptChart" style="height: 370px; width: 100%;"></div></td>
-                            <td><div id="sklChart" style="height: 370px; width: 100%;"></div></td>
-                            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                            <td><h6><b>BPT Gender Distribution<b></h6><div id="chart1"></div></td>
+                            <td><h6><b>SKL Gender Distribution<b></h6><div id="chart2"></div></td>
                         </tr>
                 </table>
             </div>
         </div>
+
+        <script> 
+            var chart1 = c3.generate({
+                bindto: '#chart1',
+                data: {
+                    columns: [
+                        ['Lelaki', {{ $data[2] }}],
+                        ['Perempuan', {{ $data[3] }}],
+                    ],
+                    type : 'pie',
+                    onclick: function (d, i) { console.log("onclick", d, i); },
+                    onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                    onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                }
+            });
+            var chart2 = c3.generate({
+                bindto: '#chart2',
+                data: {
+                    columns: [
+                        ['Lelaki', {{ $data[4] }}],
+                        ['Perempuan', {{ $data[5] }}],
+                    ],
+                    type : 'pie',
+                    onclick: function (d, i) { console.log("onclick", d, i); },
+                    onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                    onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                }
+            });
+        </script>
     </body>
 </html>
