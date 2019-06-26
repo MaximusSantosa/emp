@@ -47,6 +47,11 @@
         margin: 0;
     }
 
+    table, th, td {
+        /* border: 1px solid black; */
+        padding: 5px;
+    }
+
     .full-height {
         height: 100vh;
     }
@@ -99,4 +104,5 @@
         border-bottom:1px solid #444; 
         cursor: pointer;
     }
+    
 </style>
