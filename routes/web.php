@@ -12,9 +12,10 @@
 */
 
 
-Route::get('/', 'MainController@home');
+Route::get('/', ['as' => 'home', 'uses' => 'MainController@home']);
 
-Route::get('list', 'MainController@list');
+Route::get('list', ['as' => 'list', 'uses' => 'MainController@list']);
 
 Route::get('profile/{id}/', ['as' => 'profile', 'uses' => 'MainController@profile']);
 
+Route::get('api', ['as' => 'api', 'uses' => 'ApiController@getRefresh']);

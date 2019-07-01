@@ -44,12 +44,25 @@
             </tbody>
         </table>
         </div>
+        <button id="refresh" class="btn btn-primary">Refresh Data</button>
+        <h4 id="status"></h4>
         <script>
             $(document).ready( function () {
                 $('#table').DataTable({
                     "deferRender": true
                 });
+
+                $('#refresh').on('click',function(){
+                    $('#status').text(' Refreshing ...');
+                    var url="/api";
+                    $.ajax({
+                      url: url
+                  }).done(function(res) {
+                        $('#status').text(res.msg);
+                  });
+                })
             } );
+            
         </script>
     </body>
 </html>
