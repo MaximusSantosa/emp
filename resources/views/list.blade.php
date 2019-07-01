@@ -59,6 +59,7 @@
                       url: url
                   }).done(function(res) {
                         $('#status').text(res.msg);
+                        location.reload();
                   });
                 })
             } );
