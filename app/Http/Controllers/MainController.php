@@ -38,4 +38,11 @@ class MainController extends Controller
         $data=$d->home();
         return view('home', ['data' => $data]);
     }
+
+    public function sdmreports($type)
+    {
+        $d=New GetData();
+        $data=$d->sdmreports($type);
+        return view('sdmreports', ['data' => $data]);
+    }
 }

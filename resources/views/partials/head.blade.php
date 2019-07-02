@@ -47,8 +47,11 @@
         margin: 0;
     }
 
+    table {
+        width: 100%;
+    }
+
     table, th, td {
-        /* border: 1px solid black; */
         padding: 5px;
     }
 

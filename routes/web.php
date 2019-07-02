@@ -18,4 +18,6 @@ Route::get('list', ['as' => 'list', 'uses' => 'MainController@list']);
 
 Route::get('profile/{id}/', ['as' => 'profile', 'uses' => 'MainController@profile']);
 
+Route::get('sdmreports/{type}/', ['as' => 'sdmreports', 'uses' => 'MainController@sdmreports']);
+
 Route::get('api', ['as' => 'api', 'uses' => 'ApiController@getRefresh']);
