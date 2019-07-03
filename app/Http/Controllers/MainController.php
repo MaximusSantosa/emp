@@ -13,7 +13,7 @@ class MainController extends Controller
     {
         $d=New GetData();
         $data=$d->emplist();
-        return view('list', ['data' => $data]);
+        return view('list', ['data' => $data, 'list' => 'hi']);
     }
 
     public function profile($id)

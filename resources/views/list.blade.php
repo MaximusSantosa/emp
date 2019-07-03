@@ -44,8 +44,6 @@
             </tbody>
         </table>
         </div>
-        <button id="refresh" class="btn btn-primary"><i data-feather="refresh-ccw"></i>Refresh Table Data</button>
-        <h4 id="status"></h4>
         <script>
             feather.replace();
             $(document).ready( function () {
