@@ -40,7 +40,7 @@
                                 <td>
                                     <table>
                                         <thead>
-                                            <tr bgcolor="#b3d1ff">
+                                            <tr bgcolor="#b3d1ff" style="font-weight: bold;">
                                                 <td>OPERATOR</td>
                                                 <td>L</td>
                                                 <td>P</td>
