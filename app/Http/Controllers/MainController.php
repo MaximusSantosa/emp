@@ -19,13 +19,13 @@ class MainController extends Controller
     public function profile($id)
     {
         $d=New GetData();
-        $data=$d->profile($id);
+	$data=$d->profile($id);
 	$data = json_decode(json_encode($data[0], true));
 //	$p=$_SERVER['DOCUMENT_ROOT'].'/profilepics/'.$data->NIK.'.jpg';
 //	echo $p;
 //	dd($data);
-        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/profilepics/'.$data->NIK.'.jpg')){
-            $data->img = '/profilepics/'.$data->NIK.'.jpg';
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].'/profilepics/'.$data->nik.'.jpg')){
+            $data->img = '/profilepics/'.$data->nik.'.jpg';
         } else {
             $data->img = '/profilepics/defaultPic.png';
         }

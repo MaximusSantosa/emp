@@ -22,23 +22,23 @@
             <tbody>
             @foreach($data as $row)
                 <?php
-                    $TGL_LAHIR=date_create((string)($row->TGL_LAHIR));
-                    $TGL_MASUK=date_create((string)($row->TGL_MASUK));
-                    $TODAY=date_create((string)($row->TODAY));
-                    $USIA=date_diff($TGL_LAHIR, $TODAY);
-                    $LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
+                    //$TGL_LAHIR=date_create((string)($row->TGL_LAHIR));
+                    //$TGL_MASUK=date_create((string)($row->TGL_MASUK));
+                    //$TODAY=date_create((string)($row->TODAY));
+                    //$USIA=date_diff($TGL_LAHIR, $TODAY);
+                    //$LAMA_KERJA=date_diff($TGL_MASUK, $TODAY);
                 ?>
                 <tr>
-                    <td>{{ strtoupper($row->NIK) }}</td>
+                    <td>{{ strtoupper($row->nik) }}</td>
                     <td>
-                        {{ Form::open (['route' => ['profile', 'id'=>$row->ID], 'method' => 'GET']) }}
-                            {{ Form::submit(strtoupper($row->NAMA), ['class' => 'link']) }}
+                        {{ Form::open (['route' => ['profile', 'id'=>$row->id], 'method' => 'GET']) }}
+                            {{ Form::submit(strtoupper($row->nama), ['class' => 'link']) }}
                         {{ Form::close() }}
                     </td>
-                    <td>{{ strtoupper($row->JAB) }}</td>
-                    <td>{{ strtoupper($row->DEPT) }}</td>
-                    <td>{{ strtoupper($row->SHIFT) }}</td>
-                    <td>{{ strtoupper($row->STATUS_KARYAWAN) }}</td>
+                    <td>{{ strtoupper($row->jab) }}</td>
+                    <td>{{ strtoupper($row->dept) }}</td>
+                    <td>{{ strtoupper($row->shift) }}</td>
+                    <td>{{ strtoupper($row->shift) }}</td>
                 </tr>
             @endforeach 
             </tbody>
