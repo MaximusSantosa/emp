@@ -31,9 +31,7 @@
                 <tr>
                     <td>{{ strtoupper($row->nik) }}</td>
                     <td>
-                        {{ Form::open (['route' => ['profile', 'id'=>$row->id], 'method' => 'GET']) }}
-                            {{ Form::submit(strtoupper($row->nama), ['class' => 'link']) }}
-                        {{ Form::close() }}
+                        <a href="{{ route('profile', $row->id) }}"> {{ strtoupper($row->nama) }}</a>
                     </td>
                     <td>{{ strtoupper($row->jab) }}</td>
                     <td>{{ strtoupper($row->dept) }}</td>
