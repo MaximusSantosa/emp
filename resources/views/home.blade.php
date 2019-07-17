@@ -41,12 +41,12 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Total BPT Employees: {{ $data[0] }}</td>
-                            <td>Total SKL Employees: {{ $data[1] }}</td>
+                            <td>Total BPT Employees: {{ $data[0] + $data[1] + $data[2] + $data[3] }}</td>
+                            <td>Total SKL Employees: {{ $data[4] + $data[5] + $data[6] + $data[7] }}</td>
                         </tr>
                         <tr>
-                            <td><h6><b>BPT Gender Distribution<b></h6><div id="chart1"></div></td>
-                            <td><h6><b>SKL Gender Distribution<b></h6><div id="chart2"></div></td>
+                            <td><h6><b>BPT Gender and Kontrak Distribution<b></h6><div id="chart1"></div></td>
+                            <td><h6><b>SKL Gender and Kontrak Distribution<b></h6><div id="chart2"></div></td>
                         </tr>
                 </table>
             </div>
@@ -57,26 +57,44 @@
                 bindto: '#chart1',
                 data: {
                     columns: [
-                        ['Lelaki', {{ $data[2] }}],
-                        ['Perempuan', {{ $data[3] }}],
+                        ['Lelaki KK', {{ $data[0] }}],
+                        ['Lelaki KT', {{ $data[1] }}],
+                        ['Perempuan KK', {{ $data[2] }}],
+                        ['Perempuan KT', {{ $data[3] }}]
                     ],
                     type : 'pie',
                     onclick: function (d, i) { console.log("onclick", d, i); },
                     onmouseover: function (d, i) { console.log("onmouseover", d, i); },
                     onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                },
+                pie: {
+                    label: {
+                        format: function (value, ratio, id) {
+                            return value;
+                        }
+                    }
                 }
             });
             var chart2 = c3.generate({
                 bindto: '#chart2',
                 data: {
                     columns: [
-                        ['Lelaki', {{ $data[4] }}],
-                        ['Perempuan', {{ $data[5] }}],
+                        ['Lelaki KK', {{ $data[4] }}],
+                        ['Lelaki KT', {{ $data[5] }}],
+                        ['Perempuan KK', {{ $data[6] }}],
+                        ['Perempuan KT', {{ $data[7] }}]
                     ],
                     type : 'pie',
                     onclick: function (d, i) { console.log("onclick", d, i); },
                     onmouseover: function (d, i) { console.log("onmouseover", d, i); },
                     onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                },
+                pie: {
+                    label: {
+                        format: function (value, ratio, id) {
+                            return value;
+                        }
+                    }
                 }
             });
         </script>

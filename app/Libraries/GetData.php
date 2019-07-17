@@ -23,19 +23,15 @@ class GetData extends Controller{
             }
 
             public function home(){
-                $bptTotalData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT'");
-                $bptLData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'L'");
-                $bptPData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'P'");
-                $sklTotalData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL'");
-                $sklLData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'L'");
-                $sklPData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'P'");
-                $bptTotal=sizeof($bptTotalData);
-                $sklTotal=sizeof($sklTotalData);
-                $bptL=sizeof($bptLData);
-                $bptP=sizeof($bptPData);
-                $sklL=sizeof($sklLData);
-                $sklP=sizeof($sklPData);
-                $data=array($bptTotal, $sklTotal, $bptL, $bptP, $sklL, $sklP);
+                $bptLKKData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'L' and STATUS_KARYAWAN='KK'");
+                $bptLKTData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'L' and STATUS_KARYAWAN='KT'");
+                $bptPKKData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'P' and STATUS_KARYAWAN='KK'");
+                $bptPKTData=DB::select("select * from active_emp where PERUSAHAAN = 'BPT' and GENDER = 'P' and STATUS_KARYAWAN='KT'");
+                $sklLKKData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'L' and STATUS_KARYAWAN='KK'");
+                $sklLKTData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'L' and STATUS_KARYAWAN='KT'");
+                $sklPKKData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'P' and STATUS_KARYAWAN='KK'");
+                $sklPKTData=DB::select("select * from active_emp where PERUSAHAAN = 'SKL' and GENDER = 'P' and STATUS_KARYAWAN='KT'");
+                $data=array(sizeof($bptLKKData), sizeof($bptLKTData), sizeof($bptPKKData), sizeof($bptPKTData), sizeof($sklLKKData), sizeof($sklLKTData), sizeof($sklPKKData), sizeof($sklPKTData));
                 return $data;
             }
            

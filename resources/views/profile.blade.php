@@ -58,7 +58,7 @@
                             <tr><td>SHIFT</td><td>{{ strtoupper($data->shift) }}</td></tr>
                             <tr><td>TGL KELUAR</td><td>{{ strtoupper($data->tgl_keluar) }}</td></tr>
                             <tr><td>MANAGER NIK</td><td>{{ strtoupper($data->manager_nik) }}</td></tr>
-                            <tr><td>STATUS KARYAWAN</td><td></td></tr>
+                            <tr><td>STATUS KARYAWAN</td><td>{{ strtoupper($data->status_karyawan) }}</td></tr>
                             <tr><td>USIA</td><td>{{ $USIA->format("%y") }}</td></tr>
                             <tr><td>LAMA KERJA</td><td>{{ $LAMA_KERJA->format("%y") }}</td></tr>
                         </tbody>
