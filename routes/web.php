@@ -21,3 +21,7 @@ Route::get('profile/{id}/', ['as' => 'profile', 'uses' => 'MainController@profil
 Route::get('sdmreports/{type}/', ['as' => 'sdmreports', 'uses' => 'MainController@sdmreports']);
 
 Route::get('api', ['as' => 'api', 'uses' => 'ApiController@getRefresh']);
+
+Route::get('updates', ['as' => 'updates', 'uses' => 'MainController@updates']);
+
+Route::post('addupdate', ['as' => 'updates', 'uses' => 'MainController@addupdate']);

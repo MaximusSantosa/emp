@@ -14,6 +14,9 @@
                     <a class="dropdown-item" href="/sdmreports/Skl">SKL</a>
                 </div>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/updates" style="color:#0052cc"><i data-feather="list" style="vertical-align: text-top; height:20px"></i> UPDATES</a>
+            </li>
         </ul>
         @if(!empty($list))
         <ul class="navbar-nav navbar-right">

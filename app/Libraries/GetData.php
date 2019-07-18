@@ -72,6 +72,16 @@ class GetData extends Controller{
                 return $data;
             }
 
+            public function updates(){
+                $data=array();
+                $data=DB::select("select * from updates");
+                return $data;
+            }
+
+            public function addupdate($title, $body){
+                DB::insert("insert into updates (id, post_date, title, body) values (null, CURDATE(), '$title', '$body')");
+            }
+
             
 }
 ?>

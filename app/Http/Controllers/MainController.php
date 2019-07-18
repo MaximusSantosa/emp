@@ -45,4 +45,20 @@ class MainController extends Controller
         $data=$d->sdmreports($type);
         return view('sdmreports', ['data' => $data]);
     }
+
+    public function updates()
+    {
+        $d=New GetData();
+        $data=$d->updates();
+        return view('updates', ['data' => $data]);
+    }
+
+    public function addupdate(Request $request)
+    {
+        $title=$request->title;
+        $body=$request->body;
+        $d=New GetData();
+        $data=$d->addupdate($title, $body);
+        return redirect('updates');
+    }
 }
