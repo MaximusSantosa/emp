@@ -17,9 +17,13 @@ class GetData extends Controller{
             } 
 
             public function profile($id){
-                $data=array();
-                $data=DB::select("select * from emp where ID = $id");
-                return $data;
+                $emp_data=DB::select("select * from emp where ID = $id");
+                $emp_desc=DB::select("select description from emp_desc where emp_id = $id");
+                if(sizeof($emp_desc) > 0)
+                    $emp_data[0]->desc = $emp_desc[0]->description;
+                else
+                    $emp_data[0]->desc = "None";
+                return $emp_data;
             }
 
             public function home(){
@@ -80,6 +84,14 @@ class GetData extends Controller{
 
             public function addupdate($title, $body){
                 DB::insert("insert into updates (id, post_date, title, body) values (null, CURDATE(), '$title', '$body')");
+            }
+
+            public function adddesc($id, $desc){
+                $data=DB::select("select description from emp_desc where emp_id = $id");
+                if(sizeof($data) > 0)
+                    $updated=DB::update("update emp_desc set description = '$desc' where emp_id = ?", [$id]);
+                else
+                    DB::insert("insert into emp_desc (id, emp_id, description) values (null, '$id', '$desc')");
             }
 
             

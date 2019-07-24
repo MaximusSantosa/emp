@@ -27,7 +27,7 @@
                         <thead>
                             <tr><td><h3><br></h3></td></tr>
                             <tr><td colspan="2">
-                                <img src="{{ $data->img }}" style="width:100%;">
+                                <img src="{{ $data->img }}" style="width:340px;height:340px">
                             </td></tr>
                             <tr><td><h3><br></h3></td></tr>
                         </thead>
@@ -47,9 +47,19 @@
                             <tr>
                                 <td colspan="2"><h2>{{ strtoupper($data->nama) }}</h2></td>
                             </tr>
-                            <tr><td><h3><br></h3></td></tr>
                         </thead>
                         <tbody align="left">
+                            <tr><td align="center" colspan="2">
+                            {{ Form::open(array('action' => 'MainController@adddesc', 'class' => 'form-horizontal')) }}
+                                <div class="form-row">
+                                    {{ Form::text('desc', null, array('class' => 'form-control', 'id' => 'desc', 'placeholder' => 'Add/Update description')) }} 
+                                </div><br>
+                                    {{ Form::hidden('id', $data->id, array('id' => 'id')) }} 
+                            </div>
+                                {{ Form::submit('Add/Update Description', array('class' => 'btn btn-primary')) }}
+                            {{ Form::close() }}
+                            </td></tr>
+                            <tr><td>DESCRIPTION</td><td>{{ $data->desc}}</td></tr>
                             <tr><td>TGL MASUK</td><td>{{ strtoupper($data->tgl_masuk) }}</td></tr>
                             <tr><td>CATEGORY</td><td>{{ strtoupper($data->category) }}</td></tr>
                             <tr><td>JAB</td><td>{{ strtoupper($data->jab) }}</td></tr>

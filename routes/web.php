@@ -24,4 +24,6 @@ Route::get('api', ['as' => 'api', 'uses' => 'ApiController@getRefresh']);
 
 Route::get('updates', ['as' => 'updates', 'uses' => 'MainController@updates']);
 
-Route::post('addupdate', ['as' => 'updates', 'uses' => 'MainController@addupdate']);
+Route::post('addupdate', ['as' => 'addupdate', 'uses' => 'MainController@addupdate']);
+
+Route::post('adddesc', ['as' => 'adddesc', 'uses' => 'MainController@adddesc']);

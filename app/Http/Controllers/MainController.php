@@ -61,4 +61,13 @@ class MainController extends Controller
         $data=$d->addupdate($title, $body);
         return redirect('updates');
     }
+
+    public function adddesc(Request $request)
+    {
+        $id=$request->id;
+        $desc=$request->desc;
+        $d=New GetData();
+        $data=$d->adddesc($id, $desc);
+        return redirect()->route('profile', $id);
+    }
 }
