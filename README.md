@@ -1,47 +1,11 @@
 # HR Department 
 
-This project is to help HR Department to visualize breakdown stats on their employees
-
-## Getting Started
-
-None
-
-### Prerequisites
-
-None
-
-### Installing
-
-None
-
-## Running the tests
-
-None
-
-### Break down into end to end tests
-
-None
-
-### And coding style tests
-
-None
-
-## Deployment
-
-None
+This project is to help HR Department of P.T. Bapintri to visualize breakdown stats on their employees
 
 ## Built With
 
 * PHP Laravel and AWS RDS
 * D3 charting package
-
-## Contributing
-
-none
-
-## Versioning
-
-None
 
 ## Authors
 
@@ -53,4 +17,4 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-* Thanks to Inggrit and Martin from PT Bapintri that helped me gather the requirements
+* Thank you to Inggrit and Martin from P.T. Bapintri for helping me gather the necessary employment data
