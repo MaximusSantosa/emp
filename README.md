@@ -1,4 +1,4 @@
-# Project Title
+# HR Department 
 
 This project is to help HR Department to visualize breakdown stats on their employees
 
