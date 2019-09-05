@@ -1,6 +1,6 @@
 # HR Department 
 
-This project is to help HR Department of P.T. Bapintri to visualize breakdown stats on their employees
+This project is to help HR Department of P.T. Bapintri to visualize stats on their employees
 
 ## Built With
 
