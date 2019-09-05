@@ -9,7 +9,7 @@ This project is to help HR Department of P.T. Bapintri to visualize breakdown st
 
 ## Authors
 
-* **Maximus Santosa** - *Initial work* - 
+* **Maximus Santosa** 
 
 ## License
 
