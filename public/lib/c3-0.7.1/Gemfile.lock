@@ -34,7 +34,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.3)
     eventmachine (1.2.3-x86-mingw32)
-    excon (0.55.0)
+    excon (0.71.0)
     execjs (1.4.1)
       multi_json (~> 1.0)
     ffi (1.11.1)
@@ -224,14 +224,12 @@ GEM
     middleman-sync (3.0.12)
       asset_sync (~> 1.0.0)
       middleman-core (>= 3.0.0)
-
     mini_portile2 (2.1.0)
     multi_json (1.13.1)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     nokogiri (1.7.2-x86-mingw32)
       mini_portile2 (~> 2.1.0)
-
     rack (1.6.11)
     rack-livereload (0.3.16)
       rack
